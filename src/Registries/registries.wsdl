@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+             xmlns:tns="https://test-api.example.com/webservice/registries"
+             xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+             xmlns:soap-enc="http://schemas.xmlsoap.org/soap/encoding/"
+             xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" name="Service"
+             targetNamespace="https://test-api.example.com/webservice/registries">
+    <types>
+        <xsd:schema targetNamespace="https://test-api.example.com/webservice/registries">
+            <xsd:complexType name="FileToSync">
+                <xsd:all>
+                    <xsd:element name="zalacznikUid" type="xsd:string" nillable="true"/>
+                    <xsd:element name="token" type="xsd:string" nillable="true"/>
+                </xsd:all>
+            </xsd:complexType>
+            <xsd:complexType name="ArrayOfFileToSync">
+                <xsd:complexContent>
+                    <xsd:restriction base="soap-enc:Array">
+                        <xsd:attribute ref="soap-enc:arrayType" wsdl:arrayType="tns:FileToSync[]"/>
+                    </xsd:restriction>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="GetFilesToSyncResponse">
+                <xsd:all>
+                    <xsd:element name="url" type="xsd:string" nillable="true"/>
+                    <xsd:element name="files" type="tns:ArrayOfFileToSync" nillable="true"/>
+                </xsd:all>
+            </xsd:complexType>
+            <xsd:complexType name="SendRegistryFilesResponse">
+                <xsd:all>
+                    <xsd:element name="code" type="xsd:int" nillable="true"/>
+                    <xsd:element name="xml" type="xsd:string" nillable="true"/>
+                </xsd:all>
+            </xsd:complexType>
+            <xsd:complexType name="RegistryInformations">
+                <xsd:all>
+                    <xsd:element name="id" type="xsd:string" nillable="true"/>
+                    <xsd:element name="name" type="xsd:string" nillable="true"/>
+                    <xsd:element name="toSynchronize" type="xsd:int" nillable="true"/>
+                    <xsd:element name="spId" type="xsd:int" nillable="true"/>
+                    <xsd:element name="type" type="xsd:string" nillable="true"/>
+                    <xsd:element name="zalacznikiUid" type="xsd:int" nillable="true"/>
+                    <xsd:element name="deleted" type="xsd:int" nillable="true"/>
+                </xsd:all>
+            </xsd:complexType>
+            <xsd:complexType name="RegistryColumnInformations">
+                <xsd:all>
+                    <xsd:element name="id" type="xsd:string" nillable="true"/>
+                    <xsd:element name="name" type="xsd:string" nillable="true"/>
+                    <xsd:element name="sort" type="xsd:int" nillable="true"/>
+                </xsd:all>
+            </xsd:complexType>
+            <xsd:complexType name="ArrayOfRegistryColumnInformations">
+                <xsd:complexContent>
+                    <xsd:restriction base="soap-enc:Array">
+                        <xsd:attribute ref="soap-enc:arrayType" wsdl:arrayType="tns:RegistryColumnInformations[]"/>
+                    </xsd:restriction>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="RegistryCellData">
+                <xsd:all>
+                    <xsd:element name="sort" type="xsd:int" nillable="true"/>
+                    <xsd:element name="type" type="xsd:string" nillable="true"/>
+                    <xsd:element name="content" type="xsd:string" nillable="true"/>
+                    <xsd:element name="fileName" type="xsd:string" nillable="true"/>
+                    <xsd:element name="fileContent" type="xsd:string" nillable="true"/>
+                </xsd:all>
+            </xsd:complexType>
+            <xsd:complexType name="ArrayOfRegistryCellData">
+                <xsd:complexContent>
+                    <xsd:restriction base="soap-enc:Array">
+                        <xsd:attribute ref="soap-enc:arrayType" wsdl:arrayType="tns:RegistryCellData[]"/>
+                    </xsd:restriction>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="RegistryRowValue">
+                <xsd:all>
+                    <xsd:element name="columnId" type="xsd:string" nillable="true"/>
+                    <xsd:element name="cellData" type="tns:ArrayOfRegistryCellData" nillable="true"/>
+                </xsd:all>
+            </xsd:complexType>
+            <xsd:complexType name="ArrayOfRegistryRowValue">
+                <xsd:complexContent>
+                    <xsd:restriction base="soap-enc:Array">
+                        <xsd:attribute ref="soap-enc:arrayType" wsdl:arrayType="tns:RegistryRowValue[]"/>
+                    </xsd:restriction>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="RegistryRowInformations">
+                <xsd:all>
+                    <xsd:element name="rowId" type="xsd:string" nillable="true"/>
+                    <xsd:element name="rowCreateDate" type="xsd:string" nillable="true"/>
+                    <xsd:element name="rowValue" type="tns:ArrayOfRegistryRowValue" nillable="true"/>
+                    <xsd:element name="deleted" type="xsd:int" nillable="true"/>
+                    <xsd:element name="sort" type="xsd:int" nillable="true"/>
+                </xsd:all>
+            </xsd:complexType>
+            <xsd:complexType name="ArrayOfRegistryRowInformations">
+                <xsd:complexContent>
+                    <xsd:restriction base="soap-enc:Array">
+                        <xsd:attribute ref="soap-enc:arrayType" wsdl:arrayType="tns:RegistryRowInformations[]"/>
+                    </xsd:restriction>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="DocflowRegistry">
+                <xsd:all>
+                    <xsd:element name="registry" type="tns:RegistryInformations" nillable="true"/>
+                    <xsd:element name="columns" type="tns:ArrayOfRegistryColumnInformations" nillable="true"/>
+                    <xsd:element name="rows" type="tns:ArrayOfRegistryRowInformations" nillable="true"/>
+                </xsd:all>
+            </xsd:complexType>
+            <xsd:complexType name="ArrayOfDocflowRegistry">
+                <xsd:complexContent>
+                    <xsd:restriction base="soap-enc:Array">
+                        <xsd:attribute ref="soap-enc:arrayType" wsdl:arrayType="tns:DocflowRegistry[]"/>
+                    </xsd:restriction>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="SendRegistries">
+                <xsd:all>
+                    <xsd:element name="registries" type="tns:ArrayOfDocflowRegistry" nillable="true"/>
+                </xsd:all>
+            </xsd:complexType>
+            <xsd:complexType name="RegistryResponse">
+                <xsd:all>
+                    <xsd:element name="id" type="xsd:string" nillable="true"/>
+                    <xsd:element name="type" type="xsd:string" nillable="true"/>
+                    <xsd:element name="success" type="xsd:int" nillable="true"/>
+                    <xsd:element name="description" type="xsd:string" nillable="true"/>
+                    <xsd:element name="fileTokens" type="soap-enc:Array" nillable="true"/>
+                </xsd:all>
+            </xsd:complexType>
+            <xsd:complexType name="SendRegistriesResponse">
+                <xsd:all>
+                    <xsd:element name="return" type="tns:RegistryResponse" nillable="true"/>
+                </xsd:all>
+            </xsd:complexType>
+            <xsd:complexType name="authorize">
+                <xsd:all>
+                    <xsd:element name="synchronizationClientUID" type="xsd:string" nillable="true"/>
+                    <xsd:element name="synchronizationClientPassword" type="xsd:string" nillable="true"/>
+                </xsd:all>
+            </xsd:complexType>
+            <xsd:complexType name="authorizeResponse">
+                <xsd:all>
+                    <xsd:element name="return" type="xsd:boolean" nillable="true"/>
+                </xsd:all>
+            </xsd:complexType>
+            <xsd:complexType name="logoutResponse">
+                <xsd:all>
+                    <xsd:element name="return" type="xsd:boolean" nillable="true"/>
+                </xsd:all>
+            </xsd:complexType>
+            <xsd:complexType name="messagePart">
+                <xsd:all>
+                    <xsd:element name="partNo" type="xsd:int" nillable="true"/>
+                    <xsd:element name="partAmount" type="xsd:int" nillable="true"/>
+                    <xsd:element name="msgId" type="xsd:string" nillable="true"/>
+                    <xsd:element name="msg" type="xsd:string" nillable="true"/>
+                    <xsd:element name="msgName" type="xsd:string" nillable="true"/>
+                </xsd:all>
+            </xsd:complexType>
+            <xsd:complexType name="MessagePartResponse">
+                <xsd:all>
+                    <xsd:element name="code" type="xsd:int" nillable="true"/>
+                    <xsd:element name="xml" type="xsd:string" nillable="true"/>
+                </xsd:all>
+            </xsd:complexType>
+        </xsd:schema>
+    </types>
+    <portType name="ServicePort">
+        <operation name="getFilesToSync">
+            <documentation>Zwraca listę plików wymagających synchronizacji</documentation>
+            <input message="tns:getFilesToSyncIn"/>
+            <output message="tns:getFilesToSyncOut"/>
+        </operation>
+        <operation name="sendRegistryFiles">
+            <documentation>Zwraca listę plików wymagających synchronizacji</documentation>
+            <input message="tns:sendRegistryFilesIn"/>
+            <output message="tns:sendRegistryFilesOut"/>
+        </operation>
+        <operation name="sendRegistries">
+            <documentation>Synchronizuje dostarczone rejstry</documentation>
+            <input message="tns:sendRegistriesIn"/>
+            <output message="tns:sendRegistriesOut"/>
+        </operation>
+        <operation name="authorize">
+            <documentation>Uwierzytelnienie aplikacji klienckiej</documentation>
+            <input message="tns:authorizeIn"/>
+            <output message="tns:authorizeOut"/>
+        </operation>
+        <operation name="logout">
+            <documentation>Wylogowanie aplikacji klienckiej</documentation>
+            <input message="tns:logoutIn"/>
+            <output message="tns:logoutOut"/>
+        </operation>
+        <operation name="messagePart">
+            <documentation>Pozwala na przesłanie komunikatu podzielonego na części</documentation>
+            <input message="tns:messagePartIn"/>
+            <output message="tns:messagePartOut"/>
+        </operation>
+    </portType>
+    <binding name="ServiceBinding" type="tns:ServicePort">
+        <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <operation name="getFilesToSync">
+            <soap:operation soapAction="https://test-api.example.com/webservice/registries#getFilesToSync"/>
+            <input>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                           namespace="https://test-api.example.com/webservice/registries"/>
+            </input>
+            <output>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                           namespace="https://test-api.example.com/webservice/registries"/>
+            </output>
+        </operation>
+        <operation name="sendRegistryFiles">
+            <soap:operation soapAction="https://test-api.example.com/webservice/registries#sendRegistryFiles"/>
+            <input>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                           namespace="https://test-api.example.com/webservice/registries"/>
+            </input>
+            <output>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                           namespace="https://test-api.example.com/webservice/registries"/>
+            </output>
+        </operation>
+        <operation name="sendRegistries">
+            <soap:operation soapAction="https://test-api.example.com/webservice/registries#sendRegistries"/>
+            <input>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                           namespace="https://test-api.example.com/webservice/registries"/>
+            </input>
+            <output>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                           namespace="https://test-api.example.com/webservice/registries"/>
+            </output>
+        </operation>
+        <operation name="authorize">
+            <soap:operation soapAction="https://test-api.example.com/webservice/registries#authorize"/>
+            <input>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                           namespace="https://test-api.example.com/webservice/registries"/>
+            </input>
+            <output>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                           namespace="https://test-api.example.com/webservice/registries"/>
+            </output>
+        </operation>
+        <operation name="logout">
+            <soap:operation soapAction="https://test-api.example.com/webservice/registries#logout"/>
+            <input>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                           namespace="https://test-api.example.com/webservice/registries"/>
+            </input>
+            <output>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                           namespace="https://test-api.example.com/webservice/registries"/>
+            </output>
+        </operation>
+        <operation name="messagePart">
+            <soap:operation soapAction="https://test-api.example.com/webservice/registries#messagePart"/>
+            <input>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                           namespace="https://test-api.example.com/webservice/registries"/>
+            </input>
+            <output>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                           namespace="https://test-api.example.com/webservice/registries"/>
+            </output>
+        </operation>
+    </binding>
+    <service name="ServiceService">
+        <port name="ServicePort" binding="tns:ServiceBinding">
+            <soap:address location="https://test-api.example.com/webservice/registries"/>
+        </port>
+    </service>
+    <message name="getFilesToSyncIn"/>
+    <message name="getFilesToSyncOut">
+        <part name="return" type="tns:GetFilesToSyncResponse"/>
+    </message>
+    <message name="sendRegistryFilesIn"/>
+    <message name="sendRegistryFilesOut">
+        <part name="return" type="tns:SendRegistryFilesResponse"/>
+    </message>
+    <message name="sendRegistriesIn">
+        <part name="sendRegistries" type="tns:SendRegistries"/>
+    </message>
+    <message name="sendRegistriesOut">
+        <part name="return" type="tns:SendRegistriesResponse"/>
+    </message>
+    <message name="authorizeIn">
+        <part name="request" type="tns:authorize"/>
+    </message>
+    <message name="authorizeOut">
+        <part name="return" type="tns:authorizeResponse"/>
+    </message>
+    <message name="logoutIn"/>
+    <message name="logoutOut">
+        <part name="return" type="tns:logoutResponse"/>
+    </message>
+    <message name="messagePartIn">
+        <part name="messagePart" type="tns:messagePart"/>
+    </message>
+    <message name="messagePartOut">
+        <part name="return" type="tns:MessagePartResponse"/>
+    </message>
+</definitions>
