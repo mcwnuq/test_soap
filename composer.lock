@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1b4f77a5c3c87c8013dd460a6741422a",
+    "content-hash": "12e4779828c78a070f3cfb71bd6d9b82",
     "packages": [
         {
             "name": "azjezz/psl",
@@ -2408,122 +2408,6 @@
             "time": "2024-03-15T13:55:21+00:00"
         },
         {
-            "name": "php-soap/cached-engine",
-            "version": "0.3.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/php-soap/cached-engine.git",
-                "reference": "ee2e09904680dbfe766a6f6fbf791284a4c85df9"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/php-soap/cached-engine/zipball/ee2e09904680dbfe766a6f6fbf791284a4c85df9",
-                "reference": "ee2e09904680dbfe766a6f6fbf791284a4c85df9",
-                "shasum": ""
-            },
-            "require": {
-                "php": "~8.2.0 || ~8.3.0 || ~8.4.0",
-                "php-soap/engine": "^2.13.0",
-                "psr/cache": "^3.0",
-                "psr/cache-implementation": "^3.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^10.0",
-                "symfony/cache": "^7.0 || ^6.4",
-                "vimeo/psalm": "^5.26"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Soap\\CachedEngine\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Toon Verwerft",
-                    "email": "toonverwerft@gmail.com"
-                }
-            ],
-            "description": "A cache decorator for php-soap/engine",
-            "support": {
-                "issues": "https://github.com/php-soap/cached-engine/issues",
-                "source": "https://github.com/php-soap/cached-engine/tree/0.3.0"
-            },
-            "funding": [
-                {
-                    "url": "https://opencollective.com/php-soap",
-                    "type": "open_collective"
-                }
-            ],
-            "time": "2024-10-25T07:18:15+00:00"
-        },
-        {
-            "name": "php-soap/encoding",
-            "version": "0.19.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/php-soap/encoding.git",
-                "reference": "29c2389c55a67a52d6e109b4a02561e6f3e4c61f"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/php-soap/encoding/zipball/29c2389c55a67a52d6e109b4a02561e6f3e4c61f",
-                "reference": "29c2389c55a67a52d6e109b4a02561e6f3e4c61f",
-                "shasum": ""
-            },
-            "require": {
-                "azjezz/psl": "^3.0",
-                "php": "~8.2.0 || ~8.3.0 || ~8.4.0",
-                "php-soap/engine": "^2.14",
-                "php-soap/wsdl": "^1.12",
-                "php-soap/wsdl-reader": "~0.20",
-                "php-soap/xml": "^1.8",
-                "veewee/reflecta": "~0.11",
-                "veewee/xml": "^3.3"
-            },
-            "require-dev": {
-                "guzzlehttp/guzzle": "^7.8",
-                "php-soap/engine-integration-tests": "^1.9",
-                "php-soap/psr18-transport": "^1.7",
-                "php-standard-library/psalm-plugin": "^2.3",
-                "phpunit/phpunit": "^10.5",
-                "symfony/var-dumper": "^7.0 || ^6.4",
-                "vimeo/psalm": "^5.26"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Soap\\Encoding\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Toon Verwerft",
-                    "email": "toonverwerft@gmail.com"
-                }
-            ],
-            "description": "SOAP encoding and decoding package",
-            "support": {
-                "issues": "https://github.com/php-soap/encoding/issues",
-                "source": "https://github.com/php-soap/encoding/tree/0.19.0"
-            },
-            "funding": [
-                {
-                    "url": "https://opencollective.com/php-soap",
-                    "type": "open_collective"
-                }
-            ],
-            "time": "2025-02-07T14:10:10+00:00"
-        },
-        {
             "name": "php-soap/engine",
             "version": "2.15.0",
             "source": {
@@ -2575,6 +2459,63 @@
                 }
             ],
             "time": "2025-01-03T09:16:20+00:00"
+        },
+        {
+            "name": "php-soap/ext-soap-engine",
+            "version": "1.7.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-soap/ext-soap-engine.git",
+                "reference": "b11e1949f4654f27f997b6e2bb44c1bd14735340"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-soap/ext-soap-engine/zipball/b11e1949f4654f27f997b6e2bb44c1bd14735340",
+                "reference": "b11e1949f4654f27f997b6e2bb44c1bd14735340",
+                "shasum": ""
+            },
+            "require": {
+                "azjezz/psl": "^3.0",
+                "ext-dom": "*",
+                "ext-soap": "*",
+                "php": "~8.2.0 || ~8.3.0 || ~8.4.0",
+                "php-soap/engine": "^2.13",
+                "php-soap/wsdl": "^1.12",
+                "symfony/options-resolver": "^5.4 || ^6.0 || ^7.0"
+            },
+            "require-dev": {
+                "php-soap/engine-integration-tests": "^1.9",
+                "php-soap/xml": "^1.8",
+                "phpunit/phpunit": "^10.0.19"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Soap\\ExtSoapEngine\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Toon Verwerft",
+                    "email": "toonverwerft@gmail.com"
+                }
+            ],
+            "description": "An ext-soap engine implementation",
+            "support": {
+                "issues": "https://github.com/php-soap/ext-soap-engine/issues",
+                "source": "https://github.com/php-soap/ext-soap-engine/tree/1.7.0"
+            },
+            "funding": [
+                {
+                    "url": "https://opencollective.com/php-soap",
+                    "type": "open_collective"
+                }
+            ],
+            "time": "2024-10-25T08:37:25+00:00"
         },
         {
             "name": "php-soap/psr18-transport",
@@ -2994,27 +2935,26 @@
         },
         {
             "name": "phpro/soap-client",
-            "version": "4.1.1",
+            "version": "3.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpro/soap-client.git",
-                "reference": "004d3e6826e250681a4fac78141f495fd6ec3ddf"
+                "reference": "2e1c18bcdba564cf85c1255fddf15d53df0bdaac"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpro/soap-client/zipball/004d3e6826e250681a4fac78141f495fd6ec3ddf",
-                "reference": "004d3e6826e250681a4fac78141f495fd6ec3ddf",
+                "url": "https://api.github.com/repos/phpro/soap-client/zipball/2e1c18bcdba564cf85c1255fddf15d53df0bdaac",
+                "reference": "2e1c18bcdba564cf85c1255fddf15d53df0bdaac",
                 "shasum": ""
             },
             "require": {
                 "azjezz/psl": "^3.0",
-                "laminas/laminas-code": "^4.14.0",
+                "laminas/laminas-code": "^4.8.0",
                 "php": "~8.2.0 || ~8.3.0 || ~8.4.0",
-                "php-soap/cached-engine": "~0.3",
-                "php-soap/encoding": "~0.15",
-                "php-soap/engine": "^2.14.0",
+                "php-soap/engine": "^2.13",
+                "php-soap/ext-soap-engine": "^1.7",
                 "php-soap/psr18-transport": "^1.7",
-                "php-soap/wsdl-reader": "~0.21",
+                "php-soap/wsdl-reader": "~0.18",
                 "psr/event-dispatcher": "^1.0",
                 "psr/log": "^1.0 || ^2.0 || ^3.0",
                 "symfony/console": "~5.4 || ~6.0 || ~7.0",
@@ -3031,9 +2971,8 @@
                 "phpspec/phpspec": "~7.2",
                 "phpspec/prophecy-phpunit": "^2.0.1",
                 "phpstan/phpstan": "^1.12.7",
-                "phpunit/phpunit": "~10.5.37",
-                "squizlabs/php_codesniffer": "^3.7.1",
-                "symfony/cache": "^6.4 || ^7.0"
+                "phpunit/phpunit": "~10.5",
+                "squizlabs/php_codesniffer": "^3.7.1"
             },
             "bin": [
                 "bin/soap-client"
@@ -3060,7 +2999,7 @@
             ],
             "support": {
                 "issues": "https://github.com/phpro/soap-client/issues",
-                "source": "https://github.com/phpro/soap-client/tree/4.1.1"
+                "source": "https://github.com/phpro/soap-client/tree/3.4.1"
             },
             "funding": [
                 {
@@ -3068,7 +3007,7 @@
                     "type": "open_collective"
                 }
             ],
-            "time": "2025-01-30T14:01:22+00:00"
+            "time": "2025-01-30T10:24:28+00:00"
         },
         {
             "name": "phpstan/phpdoc-parser",
@@ -7837,16 +7776,16 @@
         },
         {
             "name": "symfony/stimulus-bundle",
-            "version": "v2.22.1",
+            "version": "v2.23.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/stimulus-bundle.git",
-                "reference": "e13034d428354023c82a1db108d40fdf6cec2d36"
+                "reference": "254f4e05cbaa349d4ae68b9b2e6a22995e0887f9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/stimulus-bundle/zipball/e13034d428354023c82a1db108d40fdf6cec2d36",
-                "reference": "e13034d428354023c82a1db108d40fdf6cec2d36",
+                "url": "https://api.github.com/repos/symfony/stimulus-bundle/zipball/254f4e05cbaa349d4ae68b9b2e6a22995e0887f9",
+                "reference": "254f4e05cbaa349d4ae68b9b2e6a22995e0887f9",
                 "shasum": ""
             },
             "require": {
@@ -7886,7 +7825,7 @@
                 "symfony-ux"
             ],
             "support": {
-                "source": "https://github.com/symfony/stimulus-bundle/tree/v2.22.1"
+                "source": "https://github.com/symfony/stimulus-bundle/tree/v2.23.0"
             },
             "funding": [
                 {
@@ -7902,7 +7841,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-12-06T14:30:33+00:00"
+            "time": "2025-01-16T21:55:09+00:00"
         },
         {
             "name": "symfony/stopwatch",
@@ -8497,16 +8436,16 @@
         },
         {
             "name": "symfony/ux-turbo",
-            "version": "v2.22.1",
+            "version": "v2.23.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/ux-turbo.git",
-                "reference": "97718ea4bca26f0db843c3c0de338d6900c5a002"
+                "reference": "db96cf04d70a8c820671ce55530e8bf641ada33f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/ux-turbo/zipball/97718ea4bca26f0db843c3c0de338d6900c5a002",
-                "reference": "97718ea4bca26f0db843c3c0de338d6900c5a002",
+                "url": "https://api.github.com/repos/symfony/ux-turbo/zipball/db96cf04d70a8c820671ce55530e8bf641ada33f",
+                "reference": "db96cf04d70a8c820671ce55530e8bf641ada33f",
                 "shasum": ""
             },
             "require": {
@@ -8575,7 +8514,7 @@
                 "turbo-stream"
             ],
             "support": {
-                "source": "https://github.com/symfony/ux-turbo/tree/v2.22.1"
+                "source": "https://github.com/symfony/ux-turbo/tree/v2.23.0"
             },
             "funding": [
                 {
@@ -8591,7 +8530,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-12-05T14:25:02+00:00"
+            "time": "2025-02-06T08:47:30+00:00"
         },
         {
             "name": "symfony/validator",
@@ -9157,91 +9096,6 @@
                 }
             ],
             "time": "2025-01-29T07:06:14+00:00"
-        },
-        {
-            "name": "veewee/reflecta",
-            "version": "0.13.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/veewee/reflecta.git",
-                "reference": "aa5fae14270a20bb89506615b2ef950d84e06a74"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/veewee/reflecta/zipball/aa5fae14270a20bb89506615b2ef950d84e06a74",
-                "reference": "aa5fae14270a20bb89506615b2ef950d84e06a74",
-                "shasum": ""
-            },
-            "require": {
-                "azjezz/psl": "^2.7 || ^3.0",
-                "php": "~8.1.0 || ~8.2.0 || ~8.3.0 || ~8.4.0"
-            },
-            "require-dev": {
-                "friendsofphp/php-cs-fixer": "^3.38",
-                "infection/infection": "^0.27.8",
-                "phpunit/phpunit": "^10.4",
-                "veewee/composer-run-parallel": "^1.3",
-                "vimeo/psalm": "^5.15"
-            },
-            "type": "library",
-            "autoload": {
-                "files": [
-                    "src/ArrayAccess/index_get.php",
-                    "src/ArrayAccess/index_set.php",
-                    "src/Lens/optional.php",
-                    "src/Lens/compose.php",
-                    "src/Lens/index.php",
-                    "src/Lens/properties.php",
-                    "src/Lens/property.php",
-                    "src/Lens/read_only.php",
-                    "src/Iso/compose.php",
-                    "src/Iso/object_data.php",
-                    "src/Reflect/class_attributes.php",
-                    "src/Reflect/class_has_attribute.php",
-                    "src/Reflect/class_is_dynamic.php",
-                    "src/Reflect/instantiate.php",
-                    "src/Reflect/object_attributes.php",
-                    "src/Reflect/object_has_attribute.php",
-                    "src/Reflect/object_is_dynamic.php",
-                    "src/Reflect/properties_get.php",
-                    "src/Reflect/properties_set.php",
-                    "src/Reflect/property_get.php",
-                    "src/Reflect/property_set.php",
-                    "src/Reflect/Predicate/property_visibility.php"
-                ],
-                "psr-4": {
-                    "VeeWee\\Reflecta\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Toon Verwerft",
-                    "email": "toonverwerft@gmail.com"
-                }
-            ],
-            "description": "Unleash the Power of Optics in your code!",
-            "keywords": [
-                "array-access",
-                "isomorphisms",
-                "lenses",
-                "optics",
-                "reflection"
-            ],
-            "support": {
-                "issues": "https://github.com/veewee/reflecta/issues",
-                "source": "https://github.com/veewee/reflecta/tree/0.13.0"
-            },
-            "funding": [
-                {
-                    "url": "https://github.com/veewee",
-                    "type": "github"
-                }
-            ],
-            "time": "2025-02-06T06:20:55+00:00"
         },
         {
             "name": "veewee/xml",
@@ -11651,7 +11505,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {},
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
@@ -11659,6 +11513,6 @@
         "ext-ctype": "*",
         "ext-iconv": "*"
     },
-    "platform-dev": [],
+    "platform-dev": {},
     "plugin-api-version": "2.6.0"
 }

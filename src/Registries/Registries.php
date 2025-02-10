@@ -3,12 +3,12 @@
 use Phpro\SoapClient\CodeGenerator\Assembler;
 use Phpro\SoapClient\CodeGenerator\Rules;
 use Phpro\SoapClient\CodeGenerator\Config\Config;
-use Phpro\SoapClient\Soap\EngineOptions;
-use Phpro\SoapClient\Soap\DefaultEngineFactory;
+use Soap\ExtSoapEngine\ExtSoapOptions;
+use Phpro\SoapClient\Soap\CodeGeneratorEngineFactory;
 
 return Config::create()
-    ->setEngine($engine = DefaultEngineFactory::create(
-        EngineOptions::defaults('src/Registries/registries.wsdl')
+    ->setEngine($engine = CodeGeneratorEngineFactory::create(
+        'src/Registries/registries.wsdl'
     ))
     ->setTypeDestination('src/Registries/Type')
     ->setTypeNamespace('App\Registries\Type')

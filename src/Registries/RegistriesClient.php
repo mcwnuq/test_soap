@@ -22,6 +22,8 @@ class RegistriesClient
     }
 
     /**
+     * Zwraca listę plików wymagających synchronizacji
+     *
      * @return ResultInterface & Type\GetFilesToSyncResponse
      * @throws SoapException
      */
@@ -36,6 +38,8 @@ class RegistriesClient
     }
 
     /**
+     * Zwraca listę plików wymagających synchronizacji
+     *
      * @return ResultInterface & Type\SendRegistryFilesResponse
      * @throws SoapException
      */
@@ -50,6 +54,8 @@ class RegistriesClient
     }
 
     /**
+     * Synchronizuje dostarczone rejstry
+     *
      * @param RequestInterface & Type\SendRegistries $sendRegistries
      * @return ResultInterface & Type\SendRegistriesResponse
      * @throws SoapException
@@ -65,6 +71,8 @@ class RegistriesClient
     }
 
     /**
+     * Uwierzytelnienie aplikacji klienckiej
+     *
      * @param RequestInterface & Type\Authorize $request
      * @return ResultInterface & Type\AuthorizeResponse
      * @throws SoapException
@@ -80,6 +88,8 @@ class RegistriesClient
     }
 
     /**
+     * Wylogowanie aplikacji klienckiej
+     *
      * @return ResultInterface & Type\LogoutResponse
      * @throws SoapException
      */
@@ -94,6 +104,8 @@ class RegistriesClient
     }
 
     /**
+     * Pozwala na przesłanie komunikatu podzielonego na części
+     *
      * @param RequestInterface & Type\MessagePart $messagePart
      * @return ResultInterface & Type\MessagePartResponse
      * @throws SoapException

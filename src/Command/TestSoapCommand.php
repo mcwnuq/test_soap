@@ -3,6 +3,7 @@
 namespace App\Command;
 
 use App\Registries\RegistriesClientFactory;
+use App\Registries\Type\ArrayOfDocflowRegistry;
 use App\Registries\Type\DocflowRegistry;
 use App\Registries\Type\RegistryColumnInformations;
 use App\Registries\Type\RegistryInformations;
@@ -66,7 +67,7 @@ class TestSoapCommand extends Command
         );
 
         $registries[] = $docflowRegistry;
-        $sendRegistries = new SendRegistries($registries);
+        $sendRegistries = new SendRegistries(new ArrayOfDocflowRegistry($docflowRegistry));
         $response = $client->sendRegistries($sendRegistries);
 
         dump($response);
